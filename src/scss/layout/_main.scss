@@ -1,16 +1,125 @@
-.main__section {
+.main {
+  font-family: $fontfamily2;
+  height: 60vh;
+  &__section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
+}
+
+.form {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__label {
+    font-size: 40px;
+    padding: 10px 0;
+    color: $darkcolor;
+  }
+  &__input {
+    height: 30px;
+    width: 400px;
+    text-align: center;
+    border: 2px solid $backgrouncolor;
+  }
+}
+
+.divbtns {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+
+  &__search {
+    width: 100px;
+    height: 60px;
+    border-radius: 10%;
+    margin: 10px;
+    border: 2px solid #bbcfda;
+    background-color: $backgrouncolor2;
+    &:hover {
+      background-color: #5ca4bd;
+      color: $backgrouncolor2;
+    }
+  }
+  &__reset {
+    width: 100px;
+    height: 60px;
+    border-radius: 10%;
+    margin: 10px;
+    border: 2px solid #bbcfda;
+    background-color: $backgrouncolor2;
+    &:hover {
+      background-color: #5ca4bd;
+      color: $backgrouncolor2;
+    }
+  }
+}
+
+.main__section {
+  color: $darkcolor;
+  &--coctails {
+    border: 2px solid $backgrouncolor;
+    width: 30rem;
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+  }
+}
+.favoritecoctails {
+  border: 2px solid $backgrouncolor;
+  width: 30rem;
+  height: 18rem;
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  &__btn {
+    width: 100px;
+    height: 60px;
+    border-radius: 10%;
+    margin: 10px;
+    border: 2px solid #bbcfda;
+    background-color: $backgrouncolor2;
+
+    &:hover {
+      background-color: #5ca4bd;
+      color: $backgrouncolor2;
+    }
+  }
+  &__list {
+    list-style: none;
+  }
+}
+
+.generalcoctails__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+// -------------------------------clases para js
+
+.list_title,
+.fav_title {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .imgcoctail {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
 }
 
-.list-coctail {
-  &-favorite {
-    color: white;
-    background-color: black;
-  }
+.list-coctail-favorite {
+  border: 2px solid $backgrouncolor;
+  background-color: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

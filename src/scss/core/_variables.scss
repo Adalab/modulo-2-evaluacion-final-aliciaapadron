@@ -1,0 +1,11 @@
+$backgrouncolor: #f7e1e4;
+$backgrouncolor2: #d5e9f2;
+$darkcolor: #845a5b;
+$ligthcolor: #eedbda;
+$fontfamily2: 'Playfair Display', serif;
+.list-coctail {
+  &-favorite {
+    color: ligthcolor;
+    background-color: #e7c7c8;
+  }
+}

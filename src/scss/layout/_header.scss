@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vh;
+  background-color: $backgrouncolor;
+  &__img {
+    width: 207px;
+    position: absolute;
+    left: 0;
+  }
+  &__title {
+    font-size: 80px;
+    text-transform: uppercase;
+    font-family: $fontfamily2;
+    background: $darkcolor;
+    background: -webkit-linear-gradient(
+      to right,
+
+      #cb9797,
+      #aa7474,
+      #845a5b,
+      #6d4b4b,
+      #553b3b
+    );
+    background: linear-gradient(
+      to right,
+
+      #cb9797,
+      #aa7474,
+      #845a5b,
+      #6d4b4b,
+      #553b3b
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

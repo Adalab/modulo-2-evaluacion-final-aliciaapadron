@@ -1,22 +1,28 @@
 <main class="main">
     <section class="main__filter">
         <form class="form js-form">
-            <label class="filter__label" for="filter">Elige tu cóctel:</label>
-            <input class="filter__input js_inputCoctail" type="text" id="filter"
+            <label class="form__label" for="filter">Elige tu cóctel:</label>
+            <input class="form__input js_inputCoctail" type="text" id="filter"
                 placeholder="Escribe aquí el nombre de tu cóctel" />
-            <button class="search__btn js_btnSearch">Buscar</button>
-            <button class="reset__btn js_btnReset">Reset</button>
         </form>
+        <div class="divbtns">
+            <button class="divbtns__search js_btnSearch">Buscar</button>
+            <button class="divbtns__reset js_btnReset">Reset</button>
+        </div>
     </section>
     <section class="main__section">
-        <div class="main__section--coctails">
-            <h2>Lista</h2>
-            <ul class="list-coctail js_listCoctails"></ul>
-        </div>
-        <div class="favoritescoctails">
-            <h2>Cócteles favoritos</h2>
-            <ul class="favoritecoctail__list js_listFavoriteCoctails"></ul>
-            <button class="js-button_reset_fav">Reset</button>
-        </div>
+        <article>
+            <h2 class="list_title">Lista</h2>
+            <div class="main__section--coctails">
+                <ul class="generalcoctails__list js_listCoctails"></ul>
+            </div>
+        </article>
+        <article>
+            <h2 class="fav_title">Cócteles favoritos</h2>
+            <div class="favoritecoctails">
+                <ul class="favoritecoctails__list js_listFavoriteCoctails"></ul>
+            </div>
+            <button class="favoritecoctails__btn js-button_reset_fav">Elimina los favoritos</button>
+        </article>
     </section>
 </main>
