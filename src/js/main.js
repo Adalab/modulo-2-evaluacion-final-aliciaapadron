@@ -1,7 +1,7 @@
 'use strict';
 //constantes y variables
 const listCoctails = document.querySelector('.js_listCoctails');
-//filter
+const listFavoriteCoctails = document.querySelector('.js_listFavoriteCoctails');
 const filteredInput = document.querySelector('.js_inputCoctail');
 const buttonSearch = document.querySelector('.js_btnSearch');
 // const buttonReset = document.querySelector('.js_btnReset');
@@ -81,32 +81,39 @@ function paintCoctails(coctails) {
   let html = '';
   //añado la clase si el cóctel es favorito
   let favClass = '';
-  for (const coctail of coctails) {
-    // obtengo lo que me ha devuelto la funcion que valida si es favorito
-    const isFav = isFavorite(coctail);
-    //dependiendo es valor devuelto tomo la decision si le añado la clase de favorito o no
-    if (isFav) {
-      favClass = 'coctail--favorite';
-    } else {
-      favClass = '';
+  if (coctails !== null) {
+    for (const coctail of coctails) {
+      // obtengo lo que me ha devuelto la funcion que valida si es favorito
+      const isFav = isFavorite(coctail);
+      //dependiendo es valor devuelto tomo la decision si le añado la clase de favorito o no
+      if (isFav) {
+        favClass = 'list-coctail-favorite';
+        html = paintItemList(coctail, favClass, html);
+        listFavoriteCoctails.innerHTML = html;
+      } else {
+        favClass = '';
+        //creo todo el código html
+        html = paintItemList(coctail, favClass, html);
+        // añado el código html creado a la página
+        listCoctails.innerHTML = html;
+      }
     }
-    //creo todo el código html
-    //favClass --> añade la clase de favorito en caso que corresponda
-    html += `<li class="coctail js-coctail ${favClass}" id="${coctail.idDrink}">`;
-    html += `<h2>${coctail.strDrink}</h2>`;
-    if (coctail.strDrinkThumb !== null) {
-      html += `<img class="imgcoctail" src=${coctail.strDrinkThumb}>`;
-    } else {
-      html += `<img class="imgcoctail" src="https://via.placeholder.com/210x295/ffffff/666666/?text=coctail%20img">`;
-    }
-    html += `</li>`;
   }
-  // añado el código html creado a la página
-  listCoctails.innerHTML = html;
   //después de añadir o quitar de favoritos escucho de nuevo los eventos
   listenCoctails();
 }
 
+function paintItemList(item, classCss, html) {
+  html += `<li class="coctail js-coctail ${classCss}" id="${item.idDrink}">`;
+  html += `<h2>${item.strDrink}</h2>`;
+  if (item.strDrinkThumb !== null) {
+    html += `<img class="imgcoctail" src=${item.strDrinkThumb}>`;
+  } else {
+    html += `<img class="imgcoctail" src="https://via.placeholder.com/210x295/ffffff/666666/?text=coctail%20img">`;
+  }
+  html += `</li>`;
+  return html;
+}
 // // Añadimos la informacion al local storage
 // function setInLocalStorage() {
 //   // stringify me permite transformar a string el array de palettes

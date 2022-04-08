@@ -1,14 +1,21 @@
-<main>
-    <div class="filter">
-        <form class="js-form">
+<main class="main">
+    <section class="main__filter">
+        <form class="form js-form">
             <label class="filter__label" for="filter">Elige tu cóctel:</label>
             <input class="filter__input js_inputCoctail" type="text" id="filter"
                 placeholder="Escribe aquí el nombre de tu cóctel" />
             <button class="search__btn js_btnSearch">Buscar</button>
             <button class="reset__btn js_btnReset">Reset</button>
         </form>
-    </div>
-    <div class="coctails">
-        <ul class="coctail__list js_listCoctails"></ul>
-    </div>
+    </section>
+    <section class="main__section">
+        <div class="main__section--coctails">
+            <h2>Lista</h2>
+            <ul class="list-coctail js_listCoctails"></ul>
+        </div>
+        <div class="favoritescoctails">
+            <h2>Cócteles favoritos</h2>
+            <ul class="favoritecoctail__list js_listFavoriteCoctails"></ul>
+        </div>
+    </section>
 </main>

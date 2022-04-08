@@ -1,8 +1,16 @@
+.main__section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
 .imgcoctail {
   width: 300px;
 }
 
-.coctail--favorite {
-  color: white;
-  background-color: black;
+.list-coctail {
+  &-favorite {
+    color: white;
+    background-color: black;
+  }
 }
