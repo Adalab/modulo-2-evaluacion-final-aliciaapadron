@@ -1,6 +1,6 @@
 .main {
   font-family: $fontfamily2;
-  height: 72vh;
+  height: 75vh;
   &__section {
     display: flex;
     flex-direction: row-reverse;
@@ -23,9 +23,6 @@
         height: 21rem;
       }
     }
-  }
-  @include tablet() {
-    height: 70vh;
   }
 }
 

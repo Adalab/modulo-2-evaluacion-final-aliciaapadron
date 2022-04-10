@@ -3,24 +3,13 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 18vh;
+  height: 15%;
   background-color: $backgrouncolor;
 
-  @include tablet() {
-    height: 20vh;
-  }
-
   &__img {
-    width: 6.4rem;
     position: absolute;
     left: 0;
-
-    @include tablet() {
-      width: 8.5rem;
-    }
-    @include desktop() {
-      width: 7.6rem;
-    }
+    height: inherit;
   }
   &__title {
     font-size: 25px;

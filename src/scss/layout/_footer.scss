@@ -1,13 +1,14 @@
 .footer {
-  position: absolute;
-  bottom: 0;
   height: 10vh;
   width: 100vw;
   background-color: $backgrouncolor;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  @include tablet() {
+    position: absolute;
+    bottom: 0;
+  }
   &__title {
     color: $darkcolor;
   }
