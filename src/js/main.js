@@ -101,6 +101,7 @@ function handleBoton(event) {
   });
   dataFav = newDataFav;
   renderAllItemsFav();
+  setInLocalStorage();
 }
 //FUNCIÓN QUE SE EJECUTA AL HACER CLICK EN EL BTN BUSCAR
 //SIRVE PARA EJECUTAR LA LLAMADA A LA API
