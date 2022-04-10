@@ -3,15 +3,29 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 30vh;
+  height: 18vh;
   background-color: $backgrouncolor;
+
+  @include tablet() {
+    height: 20vh;
+  }
+
   &__img {
-    width: 207px;
+    width: 6.4rem;
     position: absolute;
     left: 0;
+
+    @include tablet() {
+      width: 8.5rem;
+    }
+    @include desktop() {
+      width: 7.6rem;
+    }
   }
   &__title {
-    font-size: 80px;
+    font-size: 25px;
+    text-align: right;
+    width: 200px;
     text-transform: uppercase;
     font-family: $fontfamily2;
     background: $darkcolor;
@@ -36,5 +50,9 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    @include tablet() {
+      width: fit-content;
+      font-size: 40px;
+    }
   }
 }

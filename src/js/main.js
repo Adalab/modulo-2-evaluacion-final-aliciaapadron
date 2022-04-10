@@ -51,10 +51,11 @@ function renderItem(data) {
   }
   const list = document.createElement('li');
   list.classList.add('js-list');
+  list.classList.add('generalcoctails__list--item');
   list.dataset.name = data.strDrink;
   list.dataset.img = imageUrl;
-  let html = `<img class="js-image imgcoctail" src="${imageUrl}" alt="${data.strDrink}">`;
-  html += `<h3 class="js-card__title">${data.strDrink}</h3>`;
+  let html = `<img class="js-image generalcoctails__list--img" src="${imageUrl}" alt="${data.strDrink}">`;
+  html += `<h3 class="generalcoctails__list--title js-card__title">${data.strDrink}</h3>`;
   list.innerHTML = html;
   const isFav = dataFav.find((fav) => fav.name === data.strDrink);
   if (isFav !== undefined) {
@@ -86,7 +87,7 @@ function renderItemFav(dataFav) {
   li.classList.add('js-favItem');
   li.dataset.name = dataFav.name;
   li.dataset.img = imageUrl;
-  let html = `<img class="js-image imgcoctail" src="${imageUrl}" alt="" placeholder="">`;
+  let html = `<i class="fa-solid fa-circle-xmark"></i><img class="js-image generalcoctails__list--img" src="${imageUrl}" alt="" placeholder="">`;
   html += `<h3 class="js-card__title">${dataFav.name}</h3>`;
   li.innerHTML = html;
 
@@ -95,8 +96,11 @@ function renderItemFav(dataFav) {
 
 //FUNCIONES MANEJADORAS
 function handleBoton(event) {
-  console.log(event.currentTarget);
-  console.log(event.currentTarget.dataset);
+  let newDataFav = dataFav.filter((item) => {
+    return item.name !== event.currentTarget.dataset.name;
+  });
+  dataFav = newDataFav;
+  renderAllItemsFav();
 }
 //FUNCIÓN QUE SE EJECUTA AL HACER CLICK EN EL BTN BUSCAR
 //SIRVE PARA EJECUTAR LA LLAMADA A LA API
@@ -128,6 +132,17 @@ function handleClickResetAllFav() {
   renderAllItemsFav();
 }
 
+function handleClickResetAllList() {
+  data = [];
+  localStorage.clear();
+  renderAllItems();
+}
+function handleClickResetAll() {
+  searchInputTitle.value = '';
+  handleClickResetAllFav();
+  handleClickResetAllList();
+}
+
 function setInLocalStorage() {
   //convertir el array en un objeto JSON y eso se guarda en la memoria del navegador
   localStorage.setItem('dataLocalStorageFav', JSON.stringify(dataFav));
@@ -149,4 +164,4 @@ getFromLocalStorage();
 //--------------------------------EVENTOS
 buttonSearch.addEventListener('click', handleCoctailTitle);
 buttonResetFav.addEventListener('click', handleClickResetAllFav);
-buttonReset.addEventListener('click', handleClickResetAllFav);
+buttonReset.addEventListener('click', handleClickResetAll);

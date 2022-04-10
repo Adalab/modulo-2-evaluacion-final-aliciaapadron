@@ -1,10 +1,31 @@
 .main {
   font-family: $fontfamily2;
-  height: 60vh;
+  height: 72vh;
   &__section {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
+    color: $darkcolor;
+    &--coctails {
+      padding: 10px 0;
+      border: 2px solid $backgrouncolor;
+      width: 11rem;
+      height: 22rem;
+      display: flex;
+      justify-content: center;
+      overflow-y: scroll;
+      @include tablet() {
+        width: 23rem;
+        height: 26rem;
+      }
+      @include desktop() {
+        width: 37rem;
+        height: 21rem;
+      }
+    }
+  }
+  @include tablet() {
+    height: 70vh;
   }
 }
 
@@ -14,15 +35,22 @@
   justify-content: center;
   align-items: center;
   &__label {
-    font-size: 40px;
+    font-size: 21px;
     padding: 10px 0;
     color: $darkcolor;
+    @include tablet() {
+      font-size: 38px;
+    }
   }
   &__input {
     height: 30px;
-    width: 400px;
+    width: 230px;
     text-align: center;
     border: 2px solid $backgrouncolor;
+    @include tablet() {
+      height: 44px;
+      width: 542px;
+    }
   }
 }
 
@@ -32,8 +60,8 @@
   justify-content: center;
 
   &__search {
-    width: 100px;
-    height: 60px;
+    width: 66px;
+    height: 37px;
     border-radius: 10%;
     margin: 10px;
     border: 2px solid #bbcfda;
@@ -41,11 +69,15 @@
     &:hover {
       background-color: #5ca4bd;
       color: $backgrouncolor2;
+    }
+    @include tablet() {
+      width: 100px;
+      height: 51px;
     }
   }
   &__reset {
-    width: 100px;
-    height: 60px;
+    width: 66px;
+    height: 37px;
     border-radius: 10%;
     margin: 10px;
     border: 2px solid #bbcfda;
@@ -54,30 +86,25 @@
       background-color: #5ca4bd;
       color: $backgrouncolor2;
     }
+    @include tablet() {
+      width: 100px;
+      height: 51px;
+    }
   }
 }
 
-.main__section {
-  color: $darkcolor;
-  &--coctails {
-    border: 2px solid $backgrouncolor;
-    width: 30rem;
-    height: 18rem;
-    display: flex;
-    justify-content: center;
-    overflow-y: scroll;
-  }
-}
 .favoritecoctails {
+  padding: 10px 0;
   border: 2px solid $backgrouncolor;
-  width: 30rem;
-  height: 18rem;
+  width: 11rem;
+  height: 22rem;
   display: flex;
   justify-content: center;
   overflow-y: scroll;
+
   &__btn {
-    width: 100px;
-    height: 60px;
+    width: 85px;
+    height: 45px;
     border-radius: 10%;
     margin: 10px;
     border: 2px solid #bbcfda;
@@ -86,10 +113,22 @@
     &:hover {
       background-color: #5ca4bd;
       color: $backgrouncolor2;
+    }
+    @include tablet() {
+      width: 100px;
+      height: 51px;
     }
   }
   &__list {
     list-style: none;
+  }
+  @include tablet() {
+    width: 23rem;
+    height: 26rem;
+  }
+  @include desktop() {
+    width: 37rem;
+    height: 21rem;
   }
 }
 
@@ -97,6 +136,37 @@
   display: flex;
   flex-direction: column;
   list-style: none;
+  padding: 10px 0;
+  &--item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 15px 0;
+  }
+  &--title {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    width: 190px;
+    text-align: center;
+    padding: 5px 0;
+    @include tablet() {
+      font-size: 20px;
+    }
+  }
+  &--img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border: 6px solid $backgrouncolor;
+    @include tablet() {
+      width: 220px;
+    }
+  }
 }
 
 // -------------------------------clases para js
@@ -105,21 +175,10 @@
 .fav_title {
   text-align: center;
   padding-bottom: 10px;
+  font-size: 15px;
 }
-
-.imgcoctail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-}
-
 .list-coctail-favorite {
+  color: ligthcolor;
+  background-color: #e7c7c8;
   border: 2px solid $backgrouncolor;
-  background-color: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
