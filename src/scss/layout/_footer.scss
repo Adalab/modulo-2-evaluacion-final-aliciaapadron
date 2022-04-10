@@ -9,6 +9,9 @@
     position: absolute;
     bottom: 0;
   }
+  @include desktop() {
+    height: 5vh;
+  }
   &__title {
     color: $darkcolor;
   }
