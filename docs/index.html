@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b6b3a2dafd.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <title>Elige tu cóctel</title>
+
+</head>
+
+<body class="body">
+  <header class="header">
+      <img class="header__img" src="./assets/images/coctail.jpg" alt="" />
+      <h2 class="header__title">Buscador de cócteles</h2>
+  </header>
+  <main class="main">
+      <section class="main__filter">
+          <form class="form js-form">
+              <label class="form__label" for="filter">Elige tu cóctel:</label>
+              <input class="form__input js_inputCoctail" type="text" id="filter"
+                  placeholder="Escribe aquí el nombre de tu cóctel" />
+          </form>
+          <div class="divbtns">
+              <button class="divbtns__search js_btnSearch">Buscar</button>
+              <button class="divbtns__reset js_btnReset">Reset</button>
+          </div>
+      </section>
+      <section class="main__section">
+          <article>
+              <h2 class="list_title">Lista</h2>
+              <div class="main__section--coctails">
+                  <ul class="generalcoctails__list js_listCoctails"></ul>
+              </div>
+          </article>
+          <article>
+              <h2 class="fav_title">Cócteles favoritos</h2>
+              <div class="favoritecoctails">
+                  <ul class="favoritecoctails__list js_listFavoriteCoctails"></ul>
+              </div>
+              <button class="favoritecoctails__btn js-button_reset_fav">Elimina los favoritos</button>
+          </article>
+      </section>
+  </main>
+  <footer class="footer">
+      <h3 class="footer__title"> Buscador de cócteles ©Alicia</h3>
+  </footer>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
