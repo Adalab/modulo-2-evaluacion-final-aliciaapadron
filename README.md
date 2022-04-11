@@ -96,10 +96,12 @@ De esta manera separarmos las acciones que están en `gulpfile.js` de la configu
 
 ## Construido con 🛠️
 -HTML
+
 -SCSS
+
 -BEM structure
+
 -Javascript
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Herramientas 🛠️
 VSC
