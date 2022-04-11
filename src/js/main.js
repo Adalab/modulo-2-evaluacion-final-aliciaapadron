@@ -1,7 +1,5 @@
-//VARIABLES GLOBALES//
-
 'use strict';
-
+//VARIABLES Y CONSTANTES GLOBALES//
 const listFavoriteCoctails = document.querySelector('.js_listFavoriteCoctails');
 const listCoctails = document.querySelector('.js_listCoctails');
 const searchInputTitle = document.querySelector('.js_inputCoctail');
@@ -25,7 +23,6 @@ function fetchItems() {
       renderAllItems();
     });
 }
-
 //FUNCIÓN PARA CARGAR LA LISTA DEL ITEM BUSCADO
 function renderAllItems() {
   listCoctails.innerHTML = ''; //pongo la lista vacía
@@ -41,9 +38,8 @@ function renderAllItems() {
     listCoctails.innerHTML = 'Cóctel no encontrado';
   }
 }
-
 //FUNCIONES APRA PINTAR EN EL HTML
-
+//PINTAR EL ITEM
 function renderItem(data) {
   let imageUrl = data.strDrinkThumb;
   if (data.strDrinkThumb === null) {
@@ -63,7 +59,7 @@ function renderItem(data) {
   }
   listCoctails.appendChild(list); //añado los li al ul
 }
-
+//PINTAR LOS ITEMS FAVORITOS
 function renderAllItemsFav() {
   listFavoriteCoctails.innerHTML = ''; //pongo la lista vacía
 
@@ -76,7 +72,7 @@ function renderAllItemsFav() {
     eachboton.addEventListener('click', handleBoton);
   }
 }
-
+//PINTAR EL ITEM FAVORITO
 function renderItemFav(dataFav) {
   const li = document.createElement('li');
   let imageUrl = dataFav.img;
@@ -88,29 +84,30 @@ function renderItemFav(dataFav) {
   li.dataset.name = dataFav.name;
   li.dataset.img = imageUrl;
   let html = `<i class="fa-solid fa-circle-xmark"></i><img class="js-image generalcoctails__list--img" src="${imageUrl}" alt="" placeholder="">`;
-  html += `<h3 class="js-card__title">${dataFav.name}</h3>`;
+  html += `<h3 class="generalcoctails__list--title js-card__title">${dataFav.name}</h3>`;
   li.innerHTML = html;
 
   listFavoriteCoctails.appendChild(li);
 }
 
 //FUNCIONES MANEJADORAS
+//FUNCIÓN MANEJADORA DEL BOTÓN X
 function handleBoton(event) {
   let newDataFav = dataFav.filter((item) => {
     return item.name !== event.currentTarget.dataset.name;
   });
   dataFav = newDataFav;
   renderAllItemsFav();
+  renderAllItems();
   setInLocalStorage();
 }
-//FUNCIÓN QUE SE EJECUTA AL HACER CLICK EN EL BTN BUSCAR
+//FUNCIÓN QUE SE EJECUTA AL HACER CLICK EN EL BOTÓN BUSCAR
 //SIRVE PARA EJECUTAR LA LLAMADA A LA API
 function handleCoctailTitle(event) {
   event.preventDefault();
   fetchItems();
 }
 //FUNCIÓN QUE SE EJECUTA AL HACER CLICK EN UN ITEM DE LA LISTA
-//
 function handleCoctailFav(event) {
   const existsFav = dataFav.find(
     (fav) => fav.name === event.currentTarget.dataset.name
@@ -132,23 +129,24 @@ function handleClickResetAllFav() {
   localStorage.clear();
   renderAllItemsFav();
 }
-
+//FUNCIÓN PARA BORRAR TODA LA LISTA
 function handleClickResetAllList() {
   data = [];
   localStorage.clear();
   renderAllItems();
 }
+//FUNCIÓN PARA BORRAR TODO
 function handleClickResetAll() {
   searchInputTitle.value = '';
   handleClickResetAllFav();
   handleClickResetAllList();
 }
-
+//FUNCIÓN PARA COLOCAR EN EL LOCALSTORAGE
 function setInLocalStorage() {
   //convertir el array en un objeto JSON y eso se guarda en la memoria del navegador
   localStorage.setItem('dataLocalStorageFav', JSON.stringify(dataFav));
 }
-
+//FUNCIÓN PARA TRAEL DEL LOCALSTORAGE
 function getFromLocalStorage() {
   const savedDataFav = localStorage.getItem('dataLocalStorageFav');
   if (savedDataFav === null) {
@@ -159,10 +157,10 @@ function getFromLocalStorage() {
   }
 }
 
-//función que se ejecuta al entrar en la web
+//FUNCIÓN QUE SE EJECUTA AL INICIAR LA WEB
 getFromLocalStorage();
 
-//--------------------------------EVENTOS
+//--------------------------------EVENTOS-------------------------------------------
 buttonSearch.addEventListener('click', handleCoctailTitle);
 buttonResetFav.addEventListener('click', handleClickResetAllFav);
 buttonReset.addEventListener('click', handleClickResetAll);
