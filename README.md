@@ -104,11 +104,15 @@ De esta manera separarmos las acciones que están en `gulpfile.js` de la configu
 -Javascript
 
 ## Herramientas 🛠️
-VSC
-GITHUB
-GULP
-ADALAB WEB STARTER KIT
-NPM
+-VSC
+
+-GITHUB
+
+-GULP
+
+-ADALAB WEB STARTER KIT
+
+-NPM
 
 ## Autores ✒️
 * **Alicia Padrón** -  [Aliciaapadron](https://github.com/aliciaapadron)
