@@ -1,5 +1,5 @@
 .footer {
-  height: 10vh;
+  height: 4vh;
   width: 100vw;
   background-color: $backgrouncolor;
   display: flex;
@@ -9,10 +9,11 @@
     position: absolute;
     bottom: 0;
   }
-  @include desktop() {
-    height: 5vh;
-  }
   &__title {
+    font-size: 15px;
+    color: $darkcolor;
+  }
+  &__github {
     color: $darkcolor;
   }
 }
