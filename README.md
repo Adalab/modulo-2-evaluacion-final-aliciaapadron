@@ -1,6 +1,11 @@
-# Adalab web starter kit
+# Buscador de cócteles
 
-Ahoy! Este es nuestro Starter Kit creado en **node y gulp**. ¿Y qué es un Starter kit? Pues es una **plantilla de proyecto con funcionalidades preinstaladas y preconfiguradas**.
+La página web consiste en un buscador de bebidas, en la que puedes ver la foto y el título de la misma. 
+Podrás crear una lista con tus cócteles favoritos y editarla a tu gusto, eliminando los que ya no sean tus favoritos o incluso empezando tu lista de nuevo.
+
+## Comenzando 🚀
+Para comenzar con este proyecto, deberás instalarte el Web started kit, a continuación te dejo unas instrucciones para su uso e instalación:
+
 
 Este Kit incluye un motor de plantillas HTML, el preprocesador SASS y un servidor local y muchas cosas más. El Kit nos ayuda a trabajar más cómodamente, nos automatiza tareas.
 
@@ -88,36 +93,25 @@ Nuestro **gulpfile.js** usa el fichero `config.json` de configuración con las r
 
 De esta manera separarmos las acciones que están en `gulpfile.js` de la configuración de las acciones que están en `config.json`.
 
-## Estructura de carpetas
 
-La estructura de carpetas tiene esta pinta:
+## Construido con 🛠️
+-HTML
+-SCSS
+-BEM structure
+-Javascript
+_Menciona las herramientas que utilizaste para crear tu proyecto_
 
-```
-src
- ├─ api // los ficheros de esta carpeta se copian en public/api/
- |  └─ data.json
- ├─ images
- |  └─ logo.jpg
- ├─ js // los ficheros de esta carpeta se concatenan en el fichero main.js y este se guarda en public/main.js
- |  ├─ main.js
- |  └─ events.js
- ├─ scss
- |  ├─ components
- |  ├─ core
- |  ├─ layout
- |  └─ pages
- └─ html
-    └─ partials
-```
+## Herramientas 🛠️
+VSC
+GITHUB
+GULP
+ADALAB WEB STARTER KIT
+NPM
 
-> **NOTA:** Los partials de HTML y SASS del proyecto son orientativos. Te recomendamos usar los que quieras, y borrar los que no uses.
+## Autores ✒️
+* **Alicia Padrón** -  [Aliciaapadron](https://github.com/aliciaapadron)
 
-## Vídeotutoriales del Starter kit
+## ¡Muchas gracias por llegar hasta aquí e interesarte en mi proyecto! 🎁
 
-- [Qué es, trabajar con la versión de desarrollo y rutas relativas](https://www.youtube.com/watch?v=XwvhXvBijos)
-- [Migración de un proyecto, trabajar con la versión de producción y GitHub Pages](https://www.youtube.com/watch?v=qqGClcgt9Uc)
-- [Motor de plantillas](https://www.youtube.com/watch?v=4GwXOJ045Zg)
-
-## Falta algo?
-
-Echas de menos que el kit haga algo en concreto? Pidelo sin problema a través de las issues o si te animas a mejorarlo mándanos un PR :)
+---
+⌨️ con ❤️ por [Aliciaapadron](https://github.com/aliciaapadron) 😊
