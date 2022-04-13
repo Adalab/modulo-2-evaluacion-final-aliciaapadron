@@ -27,6 +27,7 @@ function fetchItems() {
 function renderAllItems() {
   listCoctails.innerHTML = ''; //pongo la lista vacía
   if (data !== null) {
+    //si el cóctel que busco existe haré el siguiente for
     for (const eachCoctail of data) {
       renderItem(eachCoctail); //carga la información de cada item/pinta cada li
     }
@@ -35,6 +36,7 @@ function renderAllItems() {
       eachCoctailList.addEventListener('click', handleCoctailFav);
     }
   } else {
+    //si el cóctel que busco no existe me saldrá el siguiente mensaje
     listCoctails.innerHTML = 'Cóctel no encontrado';
   }
 }
@@ -49,14 +51,24 @@ function renderItem(data) {
   list.classList.add('js-list');
   list.classList.add('generalcoctails__list--item');
   list.dataset.name = data.strDrink;
+  list.dataset.alcoholic = data.strAlcoholic;
   list.dataset.img = imageUrl;
+  console.log(list.dataset.alcoholic);
   let html = `<img class="js-image generalcoctails__list--img" src="${imageUrl}" alt="${data.strDrink}">`;
   html += `<h3 class="generalcoctails__list--title js-card__title">${data.strDrink}</h3>`;
+
+  if (list.dataset.alcoholic !== 'Non alcoholic') {
+    html += `<p class="generalcoctails__list--alcoholic js-card__alcoholic">Tiene alcohol</p>`;
+  } else {
+    html += `<p class="generalcoctails__list--alcoholic js-card__alcoholic">Sin alcohol</p>`;
+  }
+
   list.innerHTML = html;
   const isFav = dataFav.find((fav) => fav.name === data.strDrink);
   if (isFav !== undefined) {
     list.classList.add('js-fav');
   }
+
   listCoctails.appendChild(list); //añado los li al ul
 }
 //PINTAR LOS ITEMS FAVORITOS
@@ -88,6 +100,7 @@ function renderItemFav(dataFav) {
   li.innerHTML = html;
 
   listFavoriteCoctails.appendChild(li);
+  console.log(dataFav.name);
 }
 
 //FUNCIONES MANEJADORAS
